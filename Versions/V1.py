@@ -1,0 +1,20 @@
+def getIntInput(prompt, min_value=0, max_value=1000):
+    # Infinite loop until valid input is received
+    while True:
+        try:
+            # Get user input and convert to integer
+            result = int(input(f"{prompt} ({min_value}-{max_value})"))
+            # Check if the input is within the specified range
+            if result < min_value or result > max_value:
+                print(f"Please enter an integer in the range of {min_value} and {max_value}.")
+                continue
+            break
+        except ValueError:
+            # If the input is not an integer
+            print("Invalid input. Please enter a valid integer.")
+
+    return result
+
+# Example usage
+num1 = getIntInput("Enter a number: ", 1, 10)
+print(num1)
